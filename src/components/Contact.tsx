@@ -12,16 +12,16 @@ export default function Contact() {
   return (
     <section id="contacto" className="px-5 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
-        <SectionTitle eyebrow="Reservas" title="Reservá tu turno" />
+        <SectionTitle eyebrow="Contacto" title="Contactanos" />
         <div className="grid gap-10 lg:grid-cols-2">
           <Reveal>
             {sent ? (
               <div className="flex h-full flex-col items-center justify-center rounded-2xl bg-white p-10 text-center shadow-sm">
                 <CheckCircle2 size={56} className="text-gold" />
-                <h3 className="mt-4 font-serif text-2xl font-bold">¡Gracias por tu solicitud!</h3>
-                <p className="mt-2 text-black/60">Te vamos a contactar a la brevedad para confirmar tu turno.</p>
+                <h3 className="mt-4 font-serif text-2xl font-bold">¡Gracias por tu mensaje!</h3>
+                <p className="mt-2 text-black/60">Te vamos a responder a la brevedad.</p>
                 <button onClick={() => setSent(false)} className="mt-6 text-sm font-semibold text-gold underline">
-                  Enviar otra solicitud
+                  Enviar otro mensaje
                 </button>
               </div>
             ) : (
@@ -33,32 +33,18 @@ export default function Contact() {
                 className="space-y-4 rounded-2xl bg-white p-7 shadow-sm"
               >
                 <div>
-                  <label htmlFor="nombre" className="mb-1 block text-sm font-medium">Nombre</label>
-                  <input id="nombre" required className={input} placeholder="Tu nombre" />
-                </div>
-                <div>
-                  <label htmlFor="telefono" className="mb-1 block text-sm font-medium">Teléfono</label>
-                  <input id="telefono" type="tel" required className={input} placeholder="11 1234-5678" />
-                </div>
-                <div>
-                  <label htmlFor="servicio" className="mb-1 block text-sm font-medium">Servicio</label>
-                  <select id="servicio" required defaultValue="" className={input}>
-                    <option value="" disabled>Elegí un servicio</option>
-                    <option>Corte clásico</option>
-                    <option>Barba</option>
-                    <option>Degradé</option>
-                    <option>Combo completo</option>
-                  </select>
+                  <label htmlFor="email" className="mb-1 block text-sm font-medium">Email</label>
+                  <input id="email" type="email" required className={input} placeholder="tu@email.com" />
                 </div>
                 <div>
                   <label htmlFor="mensaje" className="mb-1 block text-sm font-medium">Mensaje</label>
-                  <textarea id="mensaje" rows={4} className={input} placeholder="Día y horario preferido, aclaraciones..." />
+                  <textarea id="mensaje" rows={5} required className={input} placeholder="Escribinos tu consulta..." />
                 </div>
                 <button
                   type="submit"
                   className="w-full rounded-full bg-ink py-4 font-semibold text-white transition hover:bg-gold hover:text-ink"
                 >
-                  Solicitar turno
+                  Enviar mensaje
                 </button>
               </form>
             )}
